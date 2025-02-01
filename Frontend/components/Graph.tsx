@@ -64,8 +64,11 @@ const initialNodes = [
 
 const GraphComponent = () => {
   return (
-    <div className="w-full flex justify-center items-center">
-      <div className="w-full h-[600px] bg-gray-800 shadow-lg rounded-xl ">
+    <div className="w-full flex flex-col justify-between items-center rounded-lg  border border-white/20 p-2 gap-2">
+      <div className="flex justify-center items-center w-full h-10 text-2xl font-bold border-b-2 border-white/10">
+      Graph View
+      </div>
+      <div className="w-full h-[400px] bg-gray-800 shadow-lg rounded-xl ">
         <ReactFlow nodes={initialNodes} edges={initialEdges}  nodeTypes={nodeTypes} fitView>
           <Controls />
           <Background />

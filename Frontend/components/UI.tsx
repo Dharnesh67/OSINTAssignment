@@ -4,8 +4,38 @@ import { StatsCardsGrid } from "./StatsCard";
 import { ExportButtons } from "./ExportButton";
 import { Timeline } from "./Timeline";
 import { DataTable } from "./DataTable";
-import  Flow  from "./Graph";
+import Flow from "./Graph";
+import { Youtube, Github, Instagram, Twitter, Twitch } from "lucide-react";
+import SocialCard from "./SocialCard";
 const UI = () => {
+  const socialCards = [
+    {
+      platform: "YouTube",
+      icon: <Youtube className="text-red-500" />,
+      content: "Share your latest videos and grow your audience",
+    },
+    {
+      platform: "GitHub",
+      icon: <Github className="text-white" />,
+      content: "Collaborate on code and build amazing things",
+    },
+    {
+      platform: "Instagram",
+      icon: <Instagram className="text-pink-500" />,
+      content: "Share your moments with stunning photos",
+    },
+    {
+      platform: "Twitter",
+      icon: <Twitter className="text-blue-400" />,
+      content: "Join the conversation and stay connected",
+    },
+    {
+      platform: "Twitch",
+      icon: <Twitch className="text-purple-500" />,
+      content: "Stream and connect with your community",
+    },
+  ];
+
   return (
     <div className="flex flex-col gap-10  justify-center items-center px-16 py-3 ">
       <div className="result w-full text-2xl font-bold border-b-2 border-white/20">
@@ -25,7 +55,17 @@ const UI = () => {
         <DataTable />
       </div>
       <div className="flex  justify-between w-full">
-        <Flow/>
+        <Flow />
+      </div>
+      <div className="flex  justify-between w-full">
+        {socialCards.map((card, index) => (
+          <SocialCard
+            key={index}
+            platform={card.platform}
+            icon={card.icon}
+            content={card.content}
+          />
+        ))}
       </div>
     </div>
   );
