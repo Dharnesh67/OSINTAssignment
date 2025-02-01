@@ -1,0 +1,37 @@
+{
+  "count": 2,
+  "credit_returned": false,
+  "data": [
+    {
+      "module": "tiktok",
+      "result": {
+        "avatar": "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7329210620707799046~c5_100x100.jpeg?lk3s=a5d48078&nonce=27158&refresh_token=953a087749a34957dfc35e60a10e9b38&x-expires=1738602000&x-signature=wHaerV87Yk9rTPTg4%2Fo6BSNPN5w%3D&shp=a5d48078&shcp=81f88b70",
+        "id": "6682367264614335494",
+        "friend_count": 3,
+        "creation_date": "2019/04/21 15:17:51 (UTC) - Note: (Accuracy may vary)",
+        "language": "English",
+        "country": "India",
+        "profile": "https://www.tiktok.com/@dharmesh67"
+      }
+    },
+    {
+      "module": "partial",
+      "result": {
+        "twitter": {
+          "partial_email": "dh*************@y****.***",
+          "benefit": "Email First 2 Digits & Full Length, Phone Number Last 2 Digits",
+          "username_match": false
+        },
+        "instagram": {
+          "partial_email": "*@gmail.com",
+          "benefit": "Email Domain & TLD, Phone Number Full Length & Last 2 Digits"
+        },
+        "analysis": [
+          {
+            "email_match": "False"
+          }
+        ]
+      }
+    }
+  ]
+}
