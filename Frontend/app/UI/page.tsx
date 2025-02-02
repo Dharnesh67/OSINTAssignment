@@ -1,13 +1,13 @@
 import React from "react";
-import { SearchBar } from "./Searchbar";
-import { StatsCardsGrid } from "./StatsCard";
-import { ExportButtons } from "./ExportButton";
-import { Timeline } from "./Timeline";
-import { DataTable } from "./DataTable";
-import Flow from "./Graph";
+import { SearchBar } from "@/components/Searchbar";
+import { StatsCardsGrid } from "@/components/StatsCard";
+import { ExportButtons } from "@/components/ExportButton";
+import { Timeline } from "@/components/Timeline";
+import { DataTable } from "@/components/DataTable";
+import Flow from "@/components/Graph";
 import { Youtube, Github, Instagram, Twitter, Twitch } from "lucide-react";
-import SocialCard from "./SocialCard";
-const UI = ({data}:any) => {
+import SocialCard from "@/components/SocialCard";
+const UI = () => {
   const socialCards = [
     {
       platform: "YouTube",
@@ -39,7 +39,7 @@ const UI = ({data}:any) => {
   return (
     <div className="flex flex-col gap-10  justify-center items-center px-16 py-3 ">
       <div className="result w-full text-2xl font-bold border-b-2 border-white/20">
-        Results for: {data}
+        Results for: uSERName
       </div>
       <div className="flex  justify-between w-full">
         <SearchBar />
