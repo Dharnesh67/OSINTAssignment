@@ -4,30 +4,32 @@ const { response } = require("express");
 
 const userdata=async(req,res)=>{
     try {
-        const username = req.body.username; // Extract username from request body
 
+        console.log(req.body);
+        const {datatype,value}=req.body;
+        // res.json({ message: "API is working!" });
+        // const {type,data} = req.body; // Extract username from request body
+        console.log(datatype," + ",value);
+        
         const options = {
             method: 'GET',
             url: 'https://api.castrickclues.com/api/v1/search',
             params: {
-                type: 'username',
-                query: username,  
+                type: datatype,
+                query: value,  
                 cemetery: 'false'
             },
-            headers: {
+            headers:{
                 'accept': 'application/json',
                 'api-key': process.env.Castrickclues_API 
             }
         };
 
-        axios.request(options)
-            .then(response => {
-                console.log("API Response:", JSON.stringify(response.data, null, 2)); // Pretty-print the response
-            })
-            .catch(error => {
-                console.error("Error:", error.response ? error.response.data : error.message);
-            });
-            res.send(response)
+        const apiResponse = await axios.request(options);
+
+        console.log(apiResponse.data);
+        
+        res.json(apiResponse.data); 
 
     } catch (error) {
         console.log("Error: ",error);
