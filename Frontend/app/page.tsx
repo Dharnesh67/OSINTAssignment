@@ -8,7 +8,7 @@ export default function Home() {
   const [isUser, setIsUser] = useState(false);
   const [input, setInput] = useState({ datatype: "", value: "" });
   const [userData, setUserData] = useState(null); // Store API response data
-
+  const [Username, setUsername] = useState("")
   const FetchData = async () => {
     console.log("Input Data:", input);
 
@@ -46,28 +46,24 @@ export default function Home() {
               <div className="text-2xl font-bold">Select input type and enter your details</div>
 
               <div className="flex gap-4">
-                {/* Dropdown to select input type */}
                 <select
                   onChange={(e) => setInput({ ...input, datatype: e.target.value })}
                   value={input.datatype}
-                  className="p-2 rounded-lg"
+                  className="p-2 rounded-lg bg-[#5925DC]"
                 >
                   <option value="">Select Type</option>
                   <option value="username">Username</option>
-                  {/* <option value="phone">Phone</option>
-                  <option value="email">Email</option> */}
                 </select>
 
-                {/* Input field for the chosen datatype */}
                 <Input
                   placeholder={`Enter your ${input.datatype}`}
                   onChange={(e) => setInput({ ...input, value: e.target.value })}
                   value={input.value}
-                  disabled={!input.datatype} // Disable input until a datatype is selected
+                  disabled={!input.datatype}
                 />
 
                 <button
-                  className="bg-blue-500 px-4 py-2 rounded-lg"
+                  className="bg-[#5925DC] px-4 py-2 rounded-lg"
                   onClick={FetchData}
                   disabled={!input.datatype || !input.value} // Disable button if no datatype or value is entered
                 >
@@ -77,27 +73,13 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          <div className="p-6 bg-gray-900 rounded-lg shadow-lg text-white w-1/2 mx-auto">
-            <h2 className="text-2xl font-bold mb-4">User Details</h2>
-            <pre className="bg-gray-800 p-4 rounded-lg text-sm overflow-auto">
-              {JSON.stringify(userData, null, 2)}
-            </pre>
-
-            <button
-              className="mt-4 bg-red-500 px-4 py-2 rounded-lg"
-              onClick={() => setIsUser(false)} // Reset the form
-            >
-              Go Back
-            </button>
-          </div>
+          
+          <UI  userData={userData} Username={input} />
         )}
       </div>
     </>
   );
 }
-
-
-
 
 // export default function Home() {
 //   const [isUser, setIsUser] = useState(false);
@@ -105,7 +87,7 @@ export default function Home() {
 
 //   const FetchData = async () => {
 //     console.log(input);
-    
+
 //     try {
 //       const response = await fetch("http://localhost:5000/api/getinfo", {
 //         method: "POST",
@@ -115,10 +97,10 @@ export default function Home() {
 //         body: JSON.stringify({ value: input }), // Send {type, value}
 //       });
 //       // console.log(response.data);
-      
+
 //       const value = await response.json(); // Parse the response JSON
 //       // console.log(value);
-      
+
 //       if (response.ok) {
 //         console.log(value); // Log the response value
 //         setIsUser(true);

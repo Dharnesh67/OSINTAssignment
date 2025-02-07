@@ -21,7 +21,7 @@ const userdata=async(req,res)=>{
             },
             headers:{
                 'accept': 'application/json',
-                'api-key': process.env.Castrickclues_API 
+                'api-key': "c5e5346bc82908e1f5984ffaf3791f5a" 
             }
         };
 
