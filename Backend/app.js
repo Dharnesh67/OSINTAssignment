@@ -10,12 +10,12 @@ const PORT = 5000
 const IndexRoute=require("./Routes/route")
 
 app.use(cors({
-    origin: "http://localhost:3000", // Allow frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
-    credentials: true // If you're using cookies or authentication
+    origin: "http://localhost:3000", 
+    methods: ["GET", "POST", "PUT", "DELETE"], 
+    credentials: true 
 }));
 
-app.use(express.json()); // To parse JSON requests
+app.use(express.json()); 
 
 
 app.use("/api",IndexRoute)

@@ -9,6 +9,7 @@ import { Youtube, Github, Instagram, Twitter, Twitch } from "lucide-react";
 import SocialCard from "@/components/SocialCard";
 import { Header } from "@/components/Header";
 
+// import {Header} from "@/components/Header";
 const UI = () => {
  
   const socialCards = [
@@ -40,6 +41,8 @@ const UI = () => {
   ];
 
   return (
+    
+    <div className="flex flex-col gap-10  justify-center items-center px-16 py-3 ">
     <div className="flex flex-col gap-10  justify-center items-center px-16 py-3 text-white">
       <Header />
       <div className="result w-full text-2xl font-bold border-b-2 border-white/20">
@@ -71,6 +74,7 @@ const UI = () => {
           />
         ))}
       </div>
+    </div>
     </div>
   );
 };
