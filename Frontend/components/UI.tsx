@@ -7,7 +7,8 @@ import { DataTable } from "./DataTable";
 import Flow from "./Graph";
 import { Youtube, Github, Instagram, Twitter, Twitch } from "lucide-react";
 import SocialCard from "./SocialCard";
-const UI = ({data}:any) => {
+import JsonData from "./JsonData";
+const UI = ({ userData, Username }: any) => {
   const socialCards = [
     {
       platform: "YouTube",
@@ -38,9 +39,15 @@ const UI = ({data}:any) => {
 
   return (
     <div className="flex flex-col gap-10  justify-center items-center px-16 py-3 ">
-      <div className="result w-full text-2xl font-bold border-b-2 border-white/20">
-        Results for: {data}
+      <div className="p-6 bg-gray-900 rounded-lg shadow-lg text-white w-1/2 mx-auto">
+        <h2 className="text-2xl font-bold mb-4">User Details</h2>
+        <pre className="bg-gray-800 p-4 rounded-lg text-sm overflow-auto">
+          {JSON.stringify(userData, null, 2)}
+        </pre>
       </div>
+      {/* <div className="result w-full text-2xl font-bold border-b-2 border-white/20">
+        Results for: {Username}
+      </div> */}
       <div className="flex  justify-between w-full">
         <SearchBar />
         <ExportButtons />
