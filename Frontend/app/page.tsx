@@ -5,36 +5,199 @@ import UI from "@/components/UI";
 import { Input } from "@/components/ui/input";
 
 export default function Home() {
+  const data = {
+    count: 2,
+    credit_returned: false,
+    data: [
+      {
+        module: "github",
+        result: ["pathakorama1@gmail.com"],
+      },
+      {
+        module: "skype",
+        result: [
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/y2kedar/public",
+            username: "y2kedar",
+            name: "Kedar",
+            country: "United States",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/live:kedar7yadav/public",
+            username: "live:kedar7yadav",
+            name: "Kedar",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/live:parmarkeval32/public",
+            username: "live:parmarkeval32",
+            name: "KEDAR",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/kedarked/public",
+            username: "kedarked",
+            name: "Kedar",
+            country: "India",
+            state: "Maharashtra",
+            city: "Pune",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/live:.cid.97ffc02fbafecf4b/public",
+            username: "live:.cid.97ffc02fbafecf4b",
+            name: "Kedar",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/kedarkul/public",
+            username: "kedarkul",
+            name: "kedar",
+            country: "United States",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/kedar.bailur/public",
+            username: "kedar.bailur",
+            name: "Kedar",
+            country: "India",
+            city: "Bangalore",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/live:kedarchin22/public",
+            username: "live:kedarchin22",
+            name: "Kedar",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/slykedi/public",
+            username: "slykedi",
+            name: "Kedar",
+            country: "India",
+            state: "Maharashtra",
+            city: "Mumbai",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/kedar.adlservices/public",
+            username: "kedar.adlservices",
+            name: "Kedar",
+            country: "India",
+            city: "Jaipur",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/live:keewah1ne/public",
+            username: "live:keewah1ne",
+            name: "Kedar .",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/kedarkus/public",
+            username: "kedarkus",
+            name: "Kedar",
+            country: "Nepal",
+            state: "Bagmati zone",
+            city: "Bhaktapur",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/kedarraghavarao/public",
+            username: "kedarraghavarao",
+            name: "Kedar",
+            country: "India",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/live:.cid.c3ff942eaf0c81d1/public",
+            username: "live:.cid.c3ff942eaf0c81d1",
+            name: "Kedar",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/live:vkedar/public",
+            username: "live:vkedar",
+            name: "Kedar",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/kedarjujaray/public",
+            username: "kedarjujaray",
+            name: "kedar",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/live:.cid.1cca80517cb0a5d4/public",
+            username: "live:.cid.1cca80517cb0a5d4",
+            name: "kedar .",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/live:kedarpgiri_1/public",
+            username: "live:kedarpgiri_1",
+            name: "kedar",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/live:.cid.352600750bbce092/public",
+            username: "live:.cid.352600750bbce092",
+            name: "Kedar",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/live:ad12d7d8d024a552/public",
+            username: "live:ad12d7d8d024a552",
+            name: "Kedar",
+            contactType: "Skype4Consumer",
+          },
+          {
+            avatar: "https://avatar.skype.com/v1/avatars/live:kd.hole36/public",
+            username: "live:kd.hole36",
+            name: "Kedar",
+            country: "India",
+            state: "Maharashtra",
+            city: "Mumbai",
+            contactType: "Skype4Consumer",
+          },
+        ],
+      },
+    ],
+  };
+  
   const [isUser, setIsUser] = useState(false);
   const [input, setInput] = useState({ datatype: "", value: "" });
-  const [userData, setUserData] = useState(null); // Store API response data
+  const [userData, setUserData] = useState(data); // Store API response data
   const [Username, setUsername] = useState("")
+  
   const FetchData = async () => {
+    setIsUser(true);
     console.log("Input Data:", input);
 
-    try {
-      const response = await fetch("http://localhost:5000/api/getinfo", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(input), // Send {type, value}
-      });
+    // try {
+    //   const response = await fetch("http://localhost:5000/api/getinfo", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(input), // Send {type, value}
+    //   });
 
-      const value = await response.json(); // Parse response JSON
+    //   const value = await response.json(); // Parse response JSON
 
-      if (response.ok) {
-        console.log("API Response:", value);
-        setUserData(value); // Store API response in state
-        setIsUser(true);
-      } else {
-        console.error("Error:", value.message);
-      }
-    } catch (error) {
-      console.error("Error From Backend:", error);
-    }
+    //   if (response.ok) {
+    //     console.log("API Response:", value);
+    //     setUserData(value); // Store API response in state
+    //     setIsUser(true);
+    //   } else {
+    //     console.error("Error:", value.message);
+    //   }
+    // } catch (error) {
+    //   console.error("Error From Backend:", error);
+    // }
   };
-
+  
   return (
     <>
       <div className="text-white">

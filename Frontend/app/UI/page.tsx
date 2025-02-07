@@ -7,8 +7,10 @@ import { DataTable } from "@/components/DataTable";
 import Flow from "@/components/Graph";
 import { Youtube, Github, Instagram, Twitter, Twitch } from "lucide-react";
 import SocialCard from "@/components/SocialCard";
-import {Header} from "@/components/Header";
+import { Header } from "@/components/Header";
+
 const UI = () => {
+ 
   const socialCards = [
     {
       platform: "YouTube",
