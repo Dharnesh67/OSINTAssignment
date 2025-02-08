@@ -7,7 +7,7 @@ import { DataTable } from "./DataTable";
 import Flow from "./Graph";
 import { Youtube, Github, Instagram, Twitter, MessageCircle } from "lucide-react"; // Using MessageCircle for Skype
 import SocialCard from "./SocialCard";
-
+import InfoCardList from "./InfocardList";
 const UI = ({ userData, Username }: any) => {
   const [DATA, setDATA] = useState(userData);
 
@@ -38,6 +38,9 @@ const UI = ({ userData, Username }: any) => {
         <SearchBar />
         <ExportButtons />
       </div>
+      {/* <div className="flex  justify-between w-full">
+        <StatsCardsGrid  /> */}
+
       <div className="flex justify-between w-full">
         <StatsCardsGrid jsonData={DATA} />
       </div>
@@ -52,8 +55,18 @@ const UI = ({ userData, Username }: any) => {
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6 w-full">
         {socialCards.map((card, index) => (
-          <SocialCard key={index} platform={card.platform} icon={card.icon} content={card.content} />
+          <SocialCard
+            key={index}
+            platform={card.platform}
+            icon={card.icon}
+            content={card.content}
+          />
         ))}
+      </div>
+      <div>
+        <div>
+          <InfoCardList users={userData} />
+        </div>
       </div>
     </div>
   );
