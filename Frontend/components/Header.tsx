@@ -4,8 +4,8 @@ import { Sun } from "lucide-react";
 import { Coins } from "lucide-react";
 export const Header = () => {
   return (
-    <div className="main w-full flex justify-center p-5  ">
-      <header className="bg-black-bg border border-white/10 rounded-xl w-3/4 border-opacity-50">
+    <div className="main w-full flex justify-center p-5 ">
+      <header className="bg-black-bg border border-white/10 rounded-xl w-3/4 border-opacity-50 overflow-scroll scrollbar-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center py-2">
             {/* Logo */}
