@@ -38,7 +38,7 @@ const JsonData: React.FC<JsonDataProps> = ({ jsonData }) => {
     return acc + (module.module === "skype" ? (module.result as SkypeResult[]).filter(user => user.username).length : 0);
   }, 0);
 
-  const totalAccountsPercentage = "95%"; // Assuming it's a fixed value
+  const totalAccountsPercentage = "95%"; 
 
   const totalCountries = new Set(
     jsonData.data
