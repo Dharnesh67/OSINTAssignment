@@ -206,7 +206,7 @@ const UI = ({ userData, Username }: any) => {
         <ExportButtons />
       </div>
       <div className="flex  justify-between w-full">
-        <StatsCardsGrid />
+        <StatsCardsGrid  />
       </div>
       <div className="flex  justify-between w-full">
         <Timeline />
