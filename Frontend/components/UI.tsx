@@ -7,9 +7,14 @@ import { DataTable } from "./DataTable";
 import Flow from "./Graph";
 import { Youtube, Github, Instagram, Twitter, MessageCircle } from "lucide-react"; // Using MessageCircle for Skype
 import SocialCard from "./SocialCard";
+// import SkypeUserTable from "./SkypeUserTable";
 
 const UI = ({ userData, Username }: any) => {
+  
+  console.log("userdata: ",userData);
+  
   const [DATA, setDATA] = useState(userData);
+
 
   const socialPlatforms = [
     { platform: "YouTube", icon: <Youtube className="text-red-500" />, key: "youtube" },
@@ -53,6 +58,9 @@ const UI = ({ userData, Username }: any) => {
       <div className="flex justify-between w-full">
         <Flow />
       </div>
+      {/* <div className="flex justify-between w-full">
+        <SkypeUserTable data={DATA}/>
+      </div> */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6 w-full">
         {socialCards.map((card, index) => (
           <SocialCard key={index} platform={card.platform} icon={card.icon} content={card.content} />

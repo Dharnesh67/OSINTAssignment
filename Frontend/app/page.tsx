@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 
 export default function Home() {
   const data = {
-    count: 2,
+    count: 4,
     credit_returned: false,
     data: [
       {
@@ -175,27 +175,32 @@ export default function Home() {
     setIsUser(true);
     console.log("Input Data:", input);
 
-    // try {
-    //   const response = await fetch("http://localhost:5000/api/getinfo", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(input), // Send {type, value}
-    //   });
+    try {
+      const response = await fetch("http://localhost:5000/api/getinfo", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(input), // Send {type, value}
+      });
 
-    //   const value = await response.json(); // Parse response JSON
+      const value = await response.json(); // Parse response JSON
 
-    //   if (response.ok) {
-    //     console.log("API Response:", value);
-    //     setUserData(value); // Store API response in state
-    //     setIsUser(true);
-    //   } else {
-    //     console.error("Error:", value.message);
-    //   }
-    // } catch (error) {
-    //   console.error("Error From Backend:", error);
-    // }
+      if (response.ok) {
+        console.log("API Response:", value);
+        setIsUser(true);
+      } else {
+        console.error("Error:", value.message);
+      }
+
+      if (value && Object.keys(value).length > 0) {
+        setUserData(value);
+      } else {
+        console.error("Received empty or invalid data:", value);
+      }
+    } catch (error) {
+      console.error("Error From Backend:", error);
+    }
   };
   
   return (
