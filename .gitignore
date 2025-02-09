@@ -39,6 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+<<<<<<< HEAD
+./next
+=======
 .next
 Frontend/.next/
 .next/
@@ -137,3 +140,4 @@ thumb
 sketch
 
 
+>>>>>>> 626e3b045764809d50a1e470f4b685c58430b7b6

@@ -9,6 +9,7 @@ import { Youtube, Github, Instagram, Twitter, MessageCircle } from "lucide-react
 import SocialCard from "./SocialCard";
 // import SkypeUserTable from "./SkypeUserTable";
 
+import InfoCardList from "./InfocardList";
 const UI = ({ userData, Username }: any) => {
   
   console.log("userdata: ",userData);
@@ -63,8 +64,18 @@ const UI = ({ userData, Username }: any) => {
       </div> */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6 w-full">
         {socialCards.map((card, index) => (
-          <SocialCard key={index} platform={card.platform} icon={card.icon} content={card.content} />
+          <SocialCard
+            key={index}
+            platform={card.platform}
+            icon={card.icon}
+            content={card.content}
+          />
         ))}
+      </div>
+      <div>
+        <div>
+          <InfoCardList users={userData} />
+        </div>
       </div>
     </div>
   );
